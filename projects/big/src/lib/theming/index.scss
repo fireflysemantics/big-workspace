@@ -1,0 +1,7 @@
+@import '~@angular/material/theming';
+@mixin big-component-theme($theme) {
+$accent: map-get($theme, accent);
+fs-big {
+    color: mat-color($accent);
+    }
+}
