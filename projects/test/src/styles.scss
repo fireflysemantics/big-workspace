@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-@use '@angular/material/theming' as mat;
+@use '@angular/material' as mat;
 @use '../../big/src/lib/theming' as theme;
 
 // =====================================
 // always include only once per project
 // =====================================
-@include mat.mat-core();
+@include mat.core();
 // =====================================
 // import our custom themes
 // =====================================
@@ -25,5 +25,5 @@
 // we could include them here as well.
 // ====================================
 }
-@include angular-material-theme($light-theme);
+@include mat.core-theme($light-theme);
 @include custom-components-theme($light-theme);
