@@ -4,6 +4,6 @@
 @mixin big-component-theme($theme) {
 $accent: map-get($theme, accent);
 fs-big {
-    color: mat.et-color-from-palette($accent);
+    color: mat.get-color-from-palette($accent);
     }
 }
