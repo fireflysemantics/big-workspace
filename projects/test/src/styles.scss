@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
-@use '../../big/src/lib/theming' as theme;
-
 // =====================================
 // always include only once per project
 // =====================================
@@ -13,17 +11,3 @@
 // =====================================
 // Import the big component theme
 // =====================================
-
-// =====================================
-// Initialize custom component themes
-// =====================================
-@mixin custom-components-theme($theme) {
-    @include theme.big-component-theme($theme);
-    @include theme.big-component-typography($theme);
-// ====================================
-// If we had more component themes
-// we could include them here as well.
-// ====================================
-}
-@include mat.core-theme($light-theme);
-@include custom-components-theme($light-theme);

@@ -1,5 +1,7 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
+@use '../../big/src/lib/theming' as theme;
+
 
 $my-theme-primary: mat.define-palette(mat.$indigo-palette, 500, 200, 800);
 $my-theme-accent: mat.define-palette(mat.$cyan-palette);
@@ -19,7 +21,7 @@ $config: map.merge(
     ( fs-big-typography: $big-typography-level)
 );
 
-$light-theme: mat.define-light-theme((
+$theme: mat.define-light-theme((
     color: (
         primary: $my-theme-primary,
         accent: $my-theme-accent,
@@ -27,3 +29,17 @@ $light-theme: mat.define-light-theme((
     ),
     typography: $config,
 ));
+
+// =====================================
+// Initialize custom component themes
+// =====================================
+@mixin custom-components-theme($theme) {
+    @include theme.big-component-theme($theme);
+    @include theme.big-component-typography($theme);
+// ====================================
+// If we had more component themes
+// we could include them here as well.
+// ====================================
+}
+@include mat.core-theme($theme);
+@include custom-components-theme($theme);
