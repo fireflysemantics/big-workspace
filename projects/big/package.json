@@ -1,6 +1,6 @@
 {
-  "name": "@fireflysemantics/big-component-example",
-  "version": "0.0.6",
+  "name": "@fireflysemantics/big-component-typography-example",
+  "version": "0.0.0",
   "exports": {
     "./theming": {
       "sass": "./src/lib/theming/index.scss"

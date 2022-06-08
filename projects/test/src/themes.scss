@@ -1,11 +1,29 @@
+@use 'sass:map';
 @use '@angular/material' as mat;
 
 $my-theme-primary: mat.define-palette(mat.$indigo-palette, 500, 200, 800);
 $my-theme-accent: mat.define-palette(mat.$cyan-palette);
 $my-theme-warn: mat.define-palette(mat.$deep-orange-palette, A200);
 
-$light-theme: mat.define-light-theme(
-    $my-theme-primary,
-    $my-theme-accent,
-    $my-theme-warn
+$big-typography-level: mat.define-typography-level(
+   $font-family: 'Open Sans',
+   $font-weight: 800,
+   $font-size: 3rem,
+   $line-height: 1,
+   $letter-spacing: 0.2em);
+
+$config: mat.define-typography-config();
+
+$config: map.merge(
+    $config,
+    ( fs-big-typography: $big-typography-level)
 );
+
+$light-theme: mat.define-light-theme((
+    color: (
+        primary: $my-theme-primary,
+        accent: $my-theme-accent,
+        warn: $my-theme-warn
+    ),
+    typography: $config,
+));

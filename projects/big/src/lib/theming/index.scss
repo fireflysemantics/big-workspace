@@ -1,8 +1,23 @@
-@use '@angular/material' as mat;
+@use "sass:map";
+@use "@angular/material" as mat;
 
 @mixin big-component-theme($theme) {
-$accent: map-get($theme, accent);
-fs-big {
-    color: mat.get-color-from-palette($accent);
+    $accent: map-get($theme, accent);
+    fs-big {
+        color: mat.get-color-from-palette($accent);
+    }
+}
+
+@mixin big-component-typography($theme) {
+    //Get the typography from the theme
+    $config: map.get($theme, typography);
+    @if ($config) {
+        fs-big {
+            font-size: mat.font-size($config, "fs-big-typography") !important;
+            font-weight: mat.font-weight($config, "fs-big-typography") !important;
+            font-family: mat.font-family($config, "fs-big-typography") !important;
+            line-height: mat.line-height($config, "fs-big-typography") !important;
+            letter-spacing: mat.letter-spacing($config, "fs-big-typography") !important;
+        }
     }
 }
